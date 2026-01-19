@@ -1,5 +1,5 @@
 /* Add CSS Styling */
-.a-class {
+.a-class, .also-a-class-but-cooler {
     color:rgb(0, 0, 0) ;
     background-color:rgba(255, 126, 126, 0.616);
     font-family:"Verdana","DejaVu Sans", sans-serif;
@@ -9,10 +9,7 @@
     font-size: 36px;
 }
 .also-a-class-but-cooler {
-    color:rgb(0, 0, 0) ;
-    background-color:rgba(255, 126, 126, 0.616);
-    font-family:"Verdana","DejaVu Sans", sans-serif;    
-    font-size: 24px;   
+     font-size: 24px;   
 }
 #second-id {
     background-color: rgba(131, 245, 102, 0.699);
