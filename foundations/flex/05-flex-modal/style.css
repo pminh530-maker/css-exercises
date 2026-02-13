@@ -15,14 +15,23 @@ body {
   justify-content: center;
 }
 
+
 .modal {
   background: white;
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  display: flex;
+  /* flex-direction: row by default because this is its initial value*/
+  gap: 16px;
+  padding: 16px;
 }
 
 .icon {
+  /* In the modal container, the icon is already a separate flex item. 
+  By default, flex-direction: row (ltr). 
+  Therefore, the .icon box takes up space on the left side of the modal container while the rest of the content now stays on the right.  */
+
   color: royalblue;
   font-size: 26px;
   font-weight: 700;
@@ -33,7 +42,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
+
+.header {
+  /* .header now needs to become a flex container housing the close-button because we need to add the parent property "justify-content: space-between" to flush the close button to the right. 
+  This is possible because there are only two flex items sharing the remaining space in the .modal container.*/
+
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* The remaining flex-items are <div>, which are block-level content. In a block layout, boxes are laid out one after the other, vertically, beginning at the top of a containing block. **A block-level element always starts on a new line.
+
+Because of this, all the header, text, and buttons are aligned with each other on the left. We only need to add some margin-bottom to the text to separate it from the two buttons. */
 
 .close-button {
   background: #eee;
@@ -66,4 +92,8 @@ button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+}
+
+.text {
+  margin-bottom: 16px;
 }
